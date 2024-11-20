@@ -22,12 +22,6 @@ a:focus, a:hover {
 header {
 	padding: 1.5em 0 2em 0;
 	border-bottom: 3px solid #931420;
-	background-image: -moz-linear-gradient(
-			30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-	background-image: -webkit-linear-gradient(
-			30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-	background-image: -o-linear-gradient(
-			30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 	background-image: linear-gradient(
 			30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 }
@@ -41,29 +35,26 @@ header h3 {
 }
 header img {
 	float: left;
-	padding: 0 3.13%;
+	padding: 0 3.75%;
 }
 .shadow {
 	text-shadow: 2px 2px 2px #800000;
 }
-/* the styles for the navigation bar */
-nav {
-	position: relative;
-}
-#nav_menu ul li.current a {
+/* the styles for the navigation menu */
+#nav_menu a.current {
 	color: yellow;
 }
 #nav_menu ul {
-	list-style: none;
-	position: relative;
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	position: relative;
 }
 #nav_menu ul ul {
+	width: 100%;
 	display: none;
 	position: absolute;
 	top: 100%;
-	width: 100%;
 }
 #nav_menu ul li:hover > ul {
 	display: block;
@@ -89,11 +80,15 @@ nav {
 	color: white;
 	font-weight: bold;
 }
+/* the styles for the main content */
+main {
+	clear: left;
+}
 /* the styles for the section */
 section {
-	width: 54.69%;
+	width: 65.625%;
 	float: right;
-	padding: 0 2.08% 20px 2.08%;
+	padding: 0 2.5% 20px 2.5%;
 }
 section h1 {
 	font-size: 150%;
@@ -114,10 +109,10 @@ section blockquote {
 }
 section ul {
 	padding: 0 0 .25em 1.25em;
+	list-style-type: circle;
 }
 section li {
 	padding-bottom: .35em;
-	list-style: circle;
 }
 /* the styles for the article */
 article {
@@ -134,16 +129,16 @@ article h3 {
 }
 article img {
 	float: right;
-	margin: .5em 0 1em 1em;
-	border: 1px solid black;
 	max-width: 40%;
 	min-width: 150px;
+	margin: .5em 0 1em 1em;
+	border: 1px solid black;
 }
 /* the styles for the aside */
 aside {
-	width: 22.40%;
+	width: 26.875%;
 	float: right;
-	padding: 0 0 20px 2.08%;
+	padding: 0 0 20px 2.5%;
 }
 aside h2 {
 	color: #800000;
@@ -166,4 +161,48 @@ footer p {
 	text-align: center;
 	color: white;
 	padding: 1em 0;
+}
+#mobile_menu {
+	display: none;
+}
+/* the styles for @media queries */
+@media only screen and (max-width: 734px) {
+	section h1 {
+		font-size: 125%
+	}
+	section h2, aside h2 {
+		font-size: 110%;
+	}
+	aside h3 a {
+		font-size: 85%;
+	}
+}
+@media only screen and (max-width: 648px) {
+	header img { float: none; }
+	header { text-align: center; }
+	section {
+		float: none;
+		width: 95%;
+	}
+	aside {
+		float: none;
+		padding-right: 2.5%;
+		width: 95%;
+	}
+	article img { max-width: 30%; }
+	#speakers {
+		column-count: 2;
+	}
+	#nav_menu {
+		display: none;
+	}
+	#mobile_menu {
+		display: block;
+	}
+	.slicknav_menu {
+		background-color: #800000 !important;
+	}
+}
+@media only screen and (max-width: 414px) {
+	body { font-size: 90%; }
 }
